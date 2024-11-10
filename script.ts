@@ -59,6 +59,47 @@ function loadFromLocalStorage(): void {
         }
     });
 }
+function generateResumeLink(): string {
+    const username: string = (document.getElementById('usernameInput') as HTMLInputElement).value;
+    if (!username) {
+        alert("Please enter a username.");
+        return '';
+    }
+    return `https://${username}.vercel.app/resume`;
+}
+
+// Attach to a button or trigger event when the user clicks to generate the resume link
+function handleGenerateLinkClick(): void {
+    const resumeLink = generateResumeLink();
+    if (resumeLink) {
+        alert(`Your unique resume link: ${resumeLink}`);
+    }
+}
+
+// Example: Assuming you have a button to generate the link
+document.getElementById('generateLinkButton')?.addEventListener('click', handleGenerateLinkClick);
+function downloadAsPDF(): void {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Get the resume content (you can select specific sections like name, education, etc.)
+    const resumeContent = document.getElementById('resumeContent')?.innerHTML;
+
+    if (resumeContent) {
+        doc.html(resumeContent, {
+            callback: function (doc) {
+                doc.save('resume.pdf');
+            },
+            x: 10,
+            y: 10
+        });
+    } else {
+        alert("Resume content is missing.");
+    }
+}
+
+// Example: Assuming you have a button to trigger PDF download
+document.getElementById('downloadPDFButton')?.addEventListener('click', downloadAsPDF);
 
 // Merge all actions into one window.onload
 window.onload = () => {

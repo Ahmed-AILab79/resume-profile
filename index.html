@@ -37,6 +37,9 @@
     <div id="resume-experience" contenteditable="true">Software Engineer at XYZ Corp</div>
     <div id="resume-skills" contenteditable="true">JavaScript, TypeScript, React, Node.js</div>
 </div>
+<!-- Add this input field for the username at an appropriate location in your form -->
+<label for="usernameInput">Username:</label>
+<input type="text" id="usernameInput" placeholder="Enter your username" />
 
         <!-- Header Section -->
         <header>
@@ -74,6 +77,13 @@
             <h2>Certificates</h2>
             <p>Certified Web Developer - ABC Certification Authority</p>
         </section>
+        <!-- Add this button after your username input field -->
+<button id="generateLinkButton">Generate Shareable Resume Link</button>
+<!-- Add this script tag to include jsPDF before the closing </body> tag -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Add this button below your other buttons -->
+<button id="downloadPDFButton">Download as PDF</button>
+
     </div>
     <script src="script.js"></script>
 </body>
