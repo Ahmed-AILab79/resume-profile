@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Dynamic Form for User Input -->
+<div class="form-container">
+    <h2>Enter Your Details</h2>
+    <form id="resumeForm">
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" placeholder="Enter your name"><br><br>
+
+        <label for="contactInput">Contact Information:</label>
+        <input type="text" id="contactInput" placeholder="Address, Phone, Email"><br><br>
+
+        <label for="educationInput">Education:</label>
+        <input type="text" id="educationInput" placeholder="Your degree and university"><br><br>
+
+        <label for="skillsInput">Skills:</label>
+        <input type="text" id="skillsInput" placeholder="List your skills"><br><br>
+
+        <label for="experienceInput">Experience:</label>
+        <input type="text" id="experienceInput" placeholder="Your work experience"><br><br>
+
+        <button type="button" onclick="updateResume()">Update Resume</button>
+    </form>
+</div>
+
+        <!-- Header Section -->
+        <header>
+            <h1 id="name">John Doe</h1>
+            <p id="contact-info">123 Main St, Anytown, USA | (123) 456-7890 | johndoe@email.com</p>
+        </header>
+        
+        <!-- Education Section -->
+        <section>
+            <h2>Education</h2>
+            <p>Bachelor of Science in Computer Science - XYZ University</p>
+            <p>Graduated: 2023</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages: HTML, CSS, JavaScript</li>
+                <li>Frameworks: React, Node.js</li>
+                <li>Tools: Git, VS Code, Figma</li>
+            </ul>
+        </section>
+
+        <!-- Experience Section -->
+        <section>
+            <h2>Experience</h2>
+            <h3>Software Developer, ABC Company</h3>
+            <p>June 2023 - Present</p>
+            <p>Developed and maintained web applications, collaborated with cross-functional teams, and enhanced user experiences.</p>
+        </section>
+
+        <!-- Certificates Section -->
+        <section>
+            <h2>Certificates</h2>
+            <p>Certified Web Developer - ABC Certification Authority</p>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
