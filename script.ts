@@ -59,6 +59,7 @@ function loadFromLocalStorage(): void {
         }
     });
 }
+
 function generateResumeLink(): string {
     const username: string = (document.getElementById('usernameInput') as HTMLInputElement).value;
     if (!username) {
@@ -76,8 +77,7 @@ function handleGenerateLinkClick(): void {
     }
 }
 
-// Example: Assuming you have a button to generate the link
-document.getElementById('generateLinkButton')?.addEventListener('click', handleGenerateLinkClick);
+// Function to download the resume as a PDF
 function downloadAsPDF(): void {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -98,13 +98,12 @@ function downloadAsPDF(): void {
     }
 }
 
-// Example: Assuming you have a button to trigger PDF download
-document.getElementById('downloadPDFButton')?.addEventListener('click', downloadAsPDF);
-
-// Merge all actions into one window.onload
+// Merge all actions into one window.onload function
 window.onload = () => {
     loadFromLocalStorage();  // Load saved content
     enableEditing();         // Enable editing functionality
+    document.getElementById('generateLinkButton')?.addEventListener('click', handleGenerateLinkClick); // Generate link
+    document.getElementById('downloadPDFButton')?.addEventListener('click', downloadAsPDF); // Download PDF
 };
 
 // Save content before the page is unloaded
